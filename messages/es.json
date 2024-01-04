@@ -7,5 +7,8 @@
     "title": "Soy Rogelio Vargas",
     "subtitle": "Ingeniero de Software",
     "location": "Vivo en Ciudad de México"
+  },
+  "Footer": {
+    "copy": "© 2023 Rogelio Vargas. Todos los derechos reservados."
   }
 }

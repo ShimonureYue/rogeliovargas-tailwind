@@ -7,5 +7,8 @@
     "title": "I'm Rogelio Vargas",
     "subtitle": "Software Enginner",
     "location": "Based in Mexico City"
+  },
+  "Footer": {
+    "copy": "© 2023 Rogelio Vargas. All rights reserved."
   }
 }
