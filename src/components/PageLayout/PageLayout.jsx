@@ -11,7 +11,7 @@ export default function PageLayout({ children, locale }) {
       <main className='m-[30px]'>{children}</main>
       <div className='fixed min-h-16 bottom-[30px] left-0 w-full bg-blue-dark opacity-100 visible z-10'>
         <div className='flex px-[60px] pt-3 pb-7 text-white-dark justify-between items-center flex-col-reverse sm:flex-row'>
-          <div className='text-sm text-center'>{t('copy')}</div>
+          <div className='text-xs lg:text-sm text-center'>{t('copy')}</div>
           <div className='text-xl float-right'>
             <Link
               className='inline-block'
