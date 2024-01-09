@@ -17,7 +17,7 @@ module.exports = {
         'green-dark': 'var(--green-dark)',
         'orange-light': 'var(--orange-light)',
         'red-light': 'var(--red-light)',
-        'dark-red': 'var(--dark-red)',
+        'red-dark': 'var(--red-dark)',
       },
       fontFamily: {
         roboto: ['var(--font-roboto-mono)'],
@@ -69,10 +69,19 @@ module.exports = {
           '95%': { clip: 'rect(156px, 9999px, 44px, 0)' },
           '100%': { clip: 'rect(67px, 9999px, 122px, 0)' },
         },
+        'hithere-keyframe': {
+          '30%': { transform: 'scale(1.2)' },
+          '40%': { transform: 'rotate(-20deg) scale(1.2)' },
+          '60%': { transform: 'rotate(-20deg) scale(1.2)' },
+          '50%': { transform: 'rotate(20deg) scale(1.2)' },
+          '70%': { transform: 'rotate(0deg) scale(1.2)' },
+          '100%': { transform: 'scale(1)' },
+        }
       },
       animation: {
         'glitch-before': 'noise-before 3s infinite linear alternate-reverse',
         'glitch-after': 'noise-after 2s infinite linear alternate-reverse',
+        'hithere': 'hithere-keyframe 1s ease infinite',
       },
     },
   },
