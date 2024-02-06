@@ -35,7 +35,6 @@ export default function LocalePage({ params: { locale } }) {
       mouseRef.current.classList.add('opacity-100');
     }
   };
-    
 
   useEffect(() => {
     if (window.scrollY < 100) {
@@ -51,7 +50,7 @@ export default function LocalePage({ params: { locale } }) {
 
   return (
     <PageLayout locale={locale}>
-      <div className='max-w-full md:max-w-screen-lg lg:max-w-screen-xl mx-auto my-0'>
+      <div className='max-w-full md:max-w-screen-xl lg:max-w-screen-2xl mx-auto my-0'>
         <SectionFullHeight>
           <div className='table table-fixed w-full h-full'>
             <div className='table-cell align-middle w-3 h-3 relative'>
@@ -76,10 +75,10 @@ export default function LocalePage({ params: { locale } }) {
         <section
           id='section-about'
           ref={aboutRef}
-          className='pt-0 pb-36 pr-6 pl-6  md:pr-20  md:pl-20'
+          className='pt-0 pb-36 px-2  md:px-20'
         >
           <div className='grid grid-cols-1 md:grid-cols-[180px_minmax(0,_1fr)]'>
-            <div className='flex mb-4 md:mb-0 w-full justify-center'>
+            <div className='flex mb-3 md:mb-0 w-full justify-center'>
               <div className='relative w-12 h-12 md:w-20 md:h-20 lg:w-28 lg:h-28 w'>
                 <Image
                   className='rounded-full'
@@ -96,37 +95,37 @@ export default function LocalePage({ params: { locale } }) {
               <div className='mb-8'>
                 <ul className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 gap-x-2 text-center md:text-left '>
                   <li>
-                    <strong className='text-orange-light mr-2'>
+                    <strong className='text-orange-light'>
                       {basicsLabels('name')}
                     </strong>
                     {basics('name')}
                   </li>
                   <li>
-                    <strong className='text-orange-light mr-2'>
+                    <strong className='text-orange-light'>
                       {basicsLabels('age')}
                     </strong>
                     {basics('age')}
                   </li>
                   <li>
-                    <strong className='text-orange-light mr-2'>
+                    <strong className='text-orange-light'>
                       {basicsLabels('label')}
                     </strong>
                     {basics('label')}
                   </li>
                   <li>
-                    <strong className='text-orange-light mr-2'>
+                    <strong className='text-orange-light'>
                       {basicsLabels('location.citizenship')}
                     </strong>
                     {basics('location.citizenship')}
                   </li>
                   <li>
-                    <strong className='text-orange-light mr-2'>
+                    <strong className='text-orange-light'>
                       {basicsLabels('location.region')}
                     </strong>
                     {basics('location.region')}
                   </li>
-                  <li>
-                    <strong className='text-orange-light mr-2'>
+                  <li className='text-wrap'>
+                    <strong className='text-orange-light'>
                       {basicsLabels('email')}
                     </strong>
                     {basics('email')}

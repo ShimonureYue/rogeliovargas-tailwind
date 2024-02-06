@@ -6,8 +6,8 @@ import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
 export default function Footer () {
   const t = useTranslations('Footer');
   return (
-    <div className='fixed min-h-16 bottom-[30px] left-0 w-full bg-blue-dark opacity-100 visible z-10'>
-        <div className='flex px-[60px] pt-3 pb-7 text-white-dark justify-between items-center flex-col-reverse sm:flex-row'>
+    <div className='fixed mb:min-h-16 bottom-[30px] left-0 w-full bg-blue-dark opacity-100 visible z-10'>
+        <div className='flex px-[60px] pt-3 pb-3 md:pb-7 text-white-dark justify-between items-center flex-col-reverse sm:flex-row'>
           <div className='hidden sm:block text-xs lg:text-sm text-center'>{t('copy')}</div>
           <div className='text-xl float-right'>
             <Link

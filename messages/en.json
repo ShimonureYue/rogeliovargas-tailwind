@@ -12,15 +12,15 @@
     "copy": "© 2023 Rogelio Vargas. All rights reserved."
   },
   "Basics": {
-    "name": "Nombre:",
-    "age": "Age:",
-    "label": "Job:",
-    "email": "Email:",
+    "name": "Nombre: ",
+    "age": "Age: ",
+    "label": "Job: ",
+    "email": "Email: ",
     "location": {
-      "city": "Residence",
-      "country": "Country:",
-      "citizenship": "Citizenship",
-      "region": "Residence:"
+      "city": "Residence: ",
+      "country": "Country: ",
+      "citizenship": "Citizenship: ",
+      "region": "Residence: "
     }
   },
   "basics": {
