@@ -10,5 +10,47 @@
   },
   "Footer": {
     "copy": "© 2023 Rogelio Vargas. All rights reserved."
+  },
+  "Basics": {
+    "name": "Nombre:",
+    "age": "Age:",
+    "label": "Job:",
+    "email": "E-mail;",
+    "location": {
+      "city": "Residence",
+      "country": "Country",
+      "Citizenship": "Ciudadanía"
+    }
+  },
+  "basics": {
+    "name": "Rogelio Vargas",
+    "label": "Software Enginner",
+    "image": "",
+    "age": "39 Years",
+    "email": "rogelio.vargas.marquez@gmail.com",
+    "phone": "(912) 555-4321",
+    "url": "https://rogeliovargas.com",
+    "summary": "I'm a Software Engineer specialized in Web Development, passionate about creating innovative solutions that not only meet technical requirements but also generate significant business impact. I am known for my proactive and results-oriented approach, committed to delivering the best in every task. My dedication is reflected in the delivery of high-quality products and projects, backed by my responsibility and constant enthusiasm for continuous improvement.",
+    "location": {
+      "address": "Quinta Saulo #50",
+      "postalCode": "54400",
+      "city": "Atizapan de Zaragoza",
+      "countryCode": "MX",
+      "region": "Mexico City",
+      "country": "Mexico",
+      "citizenship": "Mexican"
+    },
+    "profiles": [
+      {
+        "network": "Linkedin",
+        "username": "rogelio-vargas-marquez",
+        "url": "https://www.linkedin.com/in/rogelio-vargas-marquez"
+      },
+      {
+        "network": "Github",
+        "username": "ShimonureYue",
+        "url": "https://github.com/ShimonureYue"
+      }
+    ]
   }
 }
