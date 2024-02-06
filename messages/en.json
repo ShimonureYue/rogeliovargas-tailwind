@@ -15,11 +15,12 @@
     "name": "Nombre:",
     "age": "Age:",
     "label": "Job:",
-    "email": "E-mail;",
+    "email": "Email:",
     "location": {
       "city": "Residence",
-      "country": "Country",
-      "Citizenship": "Ciudadanía"
+      "country": "Country:",
+      "citizenship": "Citizenship",
+      "region": "Residence:"
     }
   },
   "basics": {
