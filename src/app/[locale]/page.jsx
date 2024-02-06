@@ -1,5 +1,5 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
@@ -13,19 +13,42 @@ export default function LocalePage({ params: { locale } }) {
   const t = useTranslations('LocalePage');
   const basics = useTranslations('basics');
   const basicsLabels = useTranslations('Basics');
-  
-  console.log('🚀 ~ LocalePage ~ t:', t)
+  const mouseRef = useRef(null);
   const aboutRef = useRef(null);
   const portfolioRef = useRef(null);
 
   const handleScroll = (ref) => {
-    console.log('🚀 ~ file: page.jsx:17 ~ handleScroll ~ ref:', ref.offsetTop);
     window.scrollTo({
       top: ref.offsetTop - 110,
       left: 0,
       behavior: 'smooth',
     });
   };
+
+  const handleScrollWindow = () => {
+    if (window.scrollY > 100) {
+      mouseRef.current.classList.remove('opacity-100');
+      mouseRef.current.classList.add('opacity-0');
+    }
+    if (window.scrollY < 100) {
+      mouseRef.current.classList.remove('opacity-0');
+      mouseRef.current.classList.add('opacity-100');
+    }
+  };
+    
+
+  useEffect(() => {
+    if (window.scrollY < 100) {
+      mouseRef.current.classList.add('opacity-100');
+      mouseRef.current.classList.remove('opacity-0');
+    }
+    window.addEventListener('scroll', handleScrollWindow, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollWindow);
+    };
+  }, [mouseRef]);
+
   return (
     <PageLayout locale={locale}>
       <div className='max-w-full md:max-w-screen-lg lg:max-w-screen-xl mx-auto my-0'>
@@ -38,7 +61,8 @@ export default function LocalePage({ params: { locale } }) {
                 sequence={[t('subtitle'), 500, t('location'), 500]}
               />
               <div
-                className='absolute text-red-dark text-xl bottom-[90px] left-[50%] animate-hithere hover:cursor-pointer'
+                ref={mouseRef}
+                className='absolute text-orange-light text-xl bottom-[90px] left-[50%] animate-hithere hover:cursor-pointer opacity-0 transition-opacity ease-in-out delay-150 duration-300'
                 onClick={() => {
                   handleScroll(aboutRef.current);
                 }}
@@ -65,24 +89,54 @@ export default function LocalePage({ params: { locale } }) {
                 />
               </div>
             </div>
-            <div className='text-sm text-white'  >
-              <p className='mb-8 text-center md:text-left'>
+            <div className='text-sm text-white'>
+              <p className='mb-16 text-center md:text-left'>
                 {basics('summary')}
               </p>
               <div className='mb-8'>
                 <ul className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 gap-x-2 text-center md:text-left '>
-                  <li><strong className='text-orange-light mr-2'>{basicsLabels('name')}</strong>{basics('name')}</li>
-                  <li><strong className='text-orange-light mr-2'>{basicsLabels('age')}</strong>{basics('age')}</li>
-                  <li><strong className='text-orange-light mr-2'>{basicsLabels('label')}</strong>{basics('label')}</li>
-                  <li><strong className='text-orange-light mr-2'>{basicsLabels('location.citizenship')}</strong>{basics('location.citizenship')}</li>
-                  <li><strong className='text-orange-light mr-2'>{basicsLabels('location.region')}</strong>{basics('location.region')}</li>
-                  <li><strong className='text-orange-light mr-2'>{basicsLabels('email')}</strong>{basics('email')}</li>
+                  <li>
+                    <strong className='text-orange-light mr-2'>
+                      {basicsLabels('name')}
+                    </strong>
+                    {basics('name')}
+                  </li>
+                  <li>
+                    <strong className='text-orange-light mr-2'>
+                      {basicsLabels('age')}
+                    </strong>
+                    {basics('age')}
+                  </li>
+                  <li>
+                    <strong className='text-orange-light mr-2'>
+                      {basicsLabels('label')}
+                    </strong>
+                    {basics('label')}
+                  </li>
+                  <li>
+                    <strong className='text-orange-light mr-2'>
+                      {basicsLabels('location.citizenship')}
+                    </strong>
+                    {basics('location.citizenship')}
+                  </li>
+                  <li>
+                    <strong className='text-orange-light mr-2'>
+                      {basicsLabels('location.region')}
+                    </strong>
+                    {basics('location.region')}
+                  </li>
+                  <li>
+                    <strong className='text-orange-light mr-2'>
+                      {basicsLabels('email')}
+                    </strong>
+                    {basics('email')}
+                  </li>
                 </ul>
-                
               </div>
             </div>
           </div>
         </section>
+        <div className='h-12 md:h-64'></div>
         {/**
         <section id='section-portfolio' ref={portfolioRef} className='pt-0 pr-20 pb-36 pl-20'>
           <p>
