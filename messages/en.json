@@ -21,7 +21,9 @@
       "country": "Country: ",
       "citizenship": "Citizenship: ",
       "region": "Residence: "
-    }
+    },
+    "aboutMe": "About Me",
+    "work": "Expirience"
   },
   "basics": {
     "name": "Rogelio Vargas",
@@ -53,5 +55,26 @@
         "url": "https://github.com/ShimonureYue"
       }
     ]
+  },
+  "work": {
+    "total": "2",
+    "0": {
+      "name": "Company",
+      "position": "President",
+      "url": "https://company.com",
+      "startDate": "2013-01-01",
+      "endDate": "2014-01-01",
+      "summary": "We believe that the strengths of the JSON format makes it a good fit for resumes. It's lightweight, easy to use and it's perfect to build tools for!",
+      "highlights": "Started the company, Crete AMAZING"
+    },
+    "1": {
+      "name": "Company 2",
+      "position": "President",
+      "url": "https://company.com",
+      "startDate": "2013-01-01",
+      "endDate": "2014-01-01",
+      "summary": "We believe that the strengths of the JSON format makes it a good fit for resumes. It's lightweight, easy to use and it's perfect to build tools for!",
+      "highlights": "Started the company, Crete AMAZING"
+    }
   }
 }

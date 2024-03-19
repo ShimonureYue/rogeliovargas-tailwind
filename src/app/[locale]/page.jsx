@@ -8,11 +8,27 @@ import { PageLayout } from '@/components/PageLayout';
 import { GlitchTitle } from '@/components/GlitchTitle';
 import { SectionFullHeight } from '@/components/SectionFullHeight';
 import { TypingText } from '@/components/TypingText';
+import { TextUnderline } from '@/components/TextUnderline';
 
 export default function LocalePage({ params: { locale } }) {
   const t = useTranslations('LocalePage');
   const basics = useTranslations('basics');
   const basicsLabels = useTranslations('Basics');
+  const work = useTranslations('work');
+
+  const totalItems = parseInt(work('total'), 10);
+  const workItems = [];
+  for (var i = 0; i < totalItems; i++) {
+    workItems.push({
+      name: work(`${i.toString()}.name`),
+      position: work(`${i.toString()}.position`),
+      url: work(`${i.toString()}.url`),
+      startDate: work(`${i.toString()}.startDate`),
+      endDate: work(`${i.toString()}.endDate`),
+      summary: work(`${i.toString()}.summary`),
+      highlights: work(`${i.toString()}.highlights`).split(','),
+    });
+  }
   const mouseRef = useRef(null);
   const aboutRef = useRef(null);
   const portfolioRef = useRef(null);
@@ -77,6 +93,9 @@ export default function LocalePage({ params: { locale } }) {
           ref={aboutRef}
           className='pt-0 pb-36 px-2  md:px-20'
         >
+          <div className='flex justify-center md:justify-start'>
+            <TextUnderline>{basicsLabels('aboutMe')}</TextUnderline>
+          </div>
           <div className='grid grid-cols-1 md:grid-cols-[180px_minmax(0,_1fr)]'>
             <div className='flex mb-3 md:mb-0 w-full justify-center'>
               <div className='relative w-12 h-12 md:w-20 md:h-20 lg:w-28 lg:h-28 w'>
@@ -133,6 +152,34 @@ export default function LocalePage({ params: { locale } }) {
                 </ul>
               </div>
             </div>
+          </div>
+        </section>
+        {/** Expirience */}
+        <section id='expirience' className='pt-0 pb-36 px-2  md:px-20'>
+          <div className='flex justify-center md:justify-start'>
+            <TextUnderline>{basicsLabels('work')}</TextUnderline>
+          </div>
+          <div className='text-white text-sm'>
+            {workItems.map((workItem, key) => (
+              <div
+                key={`work-item-${key}`}
+                className='pl-8 pb-12 relative before:content-[" "] before:absolute before:w-px before:h-full before:bg-orange-light before:left-0 before:top-[13px]'
+              >
+                <div className='flex rounded text-xs gap-2 border border-solid border-orange-light text-orange-light p-1 w-fit relative mb-3 before:absolute before:content-[" "] before:w-8 before:h-px before:bg-orange-light before:top-[50%] before:left-[-32px]'>
+                  <div key={`work-item-startDate-${key}`}>
+                    {workItem.startDate}
+                  </div>
+                  -
+                  <div key={`work-item-endDate-${key}`}>{workItem.endDate}</div>
+                </div>
+                <div key={`work-item-name-${key}`}>{workItem.name}</div>
+                <div key={`work-item-summary-${key}`}>{workItem.summary}</div>
+                <div key={`work-item-url-${key}`}>{workItem.url}</div>
+                {workItem.highlights.map((highlight, keyH) => (
+                  <div key={`work-highlights-${key}-${keyH}`}>{highlight}</div>
+                ))}
+              </div>
+            ))}
           </div>
         </section>
         <div className='h-12 md:h-64'></div>
