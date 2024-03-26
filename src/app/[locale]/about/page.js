@@ -1,10 +1,12 @@
-const About = () => {
+import About from './About';
+import { PageLayout } from '@/components/PageLayout';
 
+const AboutPage = ({ params: { locale } }) => {
   return (
-    <div>
-    hola soy el about
-    </div>
+    <PageLayout locale={locale}>
+      <About />
+    </PageLayout>
   );
-}
+};
 
-export default About;
+export default AboutPage;
