@@ -1,7 +1,6 @@
 'use client';
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { BsMouse2Fill } from 'react-icons/bs';
 import { PageLayout } from '@/components/PageLayout';
@@ -31,7 +30,7 @@ export default function LocalePage({ params: { locale } }) {
   }
   const mouseRef = useRef(null);
   const aboutRef = useRef(null);
-  const portfolioRef = useRef(null);
+  // const portfolioRef = useRef(null);
 
   const handleScroll = (ref) => {
     window.scrollTo({
@@ -66,10 +65,10 @@ export default function LocalePage({ params: { locale } }) {
 
   return (
     <PageLayout locale={locale}>
-      <div className='max-w-full md:max-w-screen-xl lg:max-w-screen-2xl mx-auto my-0'>
+      <div className='mx-auto my-0 max-w-full md:max-w-screen-xl lg:max-w-screen-2xl'>
         <SectionFullHeight>
-          <div className='table table-fixed w-full h-full'>
-            <div className='table-cell align-middle w-3 h-3 relative'>
+          <div className='table size-full table-fixed'>
+            <div className='relative table-cell size-3 align-middle'>
               <GlitchTitle label={t('title')} />
               <TypingText
                 ariaLabel={`${t('subtitle')}, ${t('location')}`}
@@ -77,7 +76,7 @@ export default function LocalePage({ params: { locale } }) {
               />
               <div
                 ref={mouseRef}
-                className='absolute text-orange-light text-xl bottom-[90px] left-[50%] animate-hithere hover:cursor-pointer opacity-0 transition-opacity ease-in-out delay-150 duration-300'
+                className='absolute bottom-[90px] left-1/2 animate-hithere text-xl text-orange-light opacity-0 transition-opacity delay-150 duration-300 ease-in-out hover:cursor-pointer'
                 onClick={() => {
                   handleScroll(aboutRef.current);
                 }}
@@ -91,14 +90,14 @@ export default function LocalePage({ params: { locale } }) {
         <section
           id='section-about'
           ref={aboutRef}
-          className='pt-0 pb-36 px-2  md:px-20'
+          className='px-2 pb-36 pt-0  md:px-20'
         >
           <div className='flex justify-center md:justify-start'>
             <TextUnderline>{basicsLabels('aboutMe')}</TextUnderline>
           </div>
           <div className='grid grid-cols-1 md:grid-cols-[180px_minmax(0,_1fr)]'>
-            <div className='flex mb-3 md:mb-0 w-full justify-center'>
-              <div className='relative w-12 h-12 md:w-20 md:h-20 lg:w-28 lg:h-28 w'>
+            <div className='mb-3 flex w-full justify-center md:mb-0'>
+              <div className='relative size-12 md:size-20 lg:size-28'>
                 <Image
                   className='rounded-full'
                   src='/rogeliovargas-photo.jpeg'
@@ -112,7 +111,7 @@ export default function LocalePage({ params: { locale } }) {
                 {basics('summary')}
               </p>
               <div className='mb-8'>
-                <ul className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 gap-x-2 text-center md:text-left '>
+                <ul className='grid grid-cols-1 gap-3 gap-x-2 text-center md:grid-cols-2 md:text-left xl:grid-cols-3 '>
                   <li>
                     <strong className='text-orange-light'>
                       {basicsLabels('name')}
@@ -155,17 +154,17 @@ export default function LocalePage({ params: { locale } }) {
           </div>
         </section>
         {/** Expirience */}
-        <section id='expirience' className='pt-0 pb-36 px-2  md:px-20'>
+        <section id='expirience' className='px-2 pb-36 pt-0  md:px-20'>
           <div className='flex justify-center md:justify-start'>
             <TextUnderline>{basicsLabels('work')}</TextUnderline>
           </div>
-          <div className='text-white text-sm'>
+          <div className='text-sm text-white'>
             {workItems.map((workItem, key) => (
               <div
                 key={`work-item-${key}`}
-                className='pl-8 pb-12 relative before:content-[" "] before:absolute before:w-px before:h-full before:bg-orange-light before:left-0 before:top-[13px]'
+                className='before:content-[" "] relative pb-12 pl-8 before:absolute before:left-0 before:top-[13px] before:h-full before:w-px before:bg-orange-light'
               >
-                <div className='flex rounded text-xs gap-2 border border-solid border-orange-light text-orange-light p-1 w-fit relative mb-3 before:absolute before:content-[" "] before:w-8 before:h-px before:bg-orange-light before:top-[50%] before:left-[-32px]'>
+                <div className='before:content-[" "] relative mb-3 flex w-fit gap-2 rounded border border-solid border-orange-light p-1 text-xs text-orange-light before:absolute before:left-[-32px] before:top-[50%] before:h-px before:w-8 before:bg-orange-light'>
                   <div key={`work-item-startDate-${key}`}>
                     {workItem.startDate}
                   </div>

@@ -6,10 +6,10 @@ import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
 export default function Footer () {
   const t = useTranslations('Footer');
   return (
-    <div className='fixed mb:min-h-16 bottom-[30px] left-0 w-full bg-blue-dark opacity-100 visible z-10'>
-        <div className='flex px-[60px] pt-3 pb-3 md:pb-7 text-white-dark justify-between items-center flex-col-reverse sm:flex-row'>
-          <div className='hidden sm:block text-xs lg:text-sm text-center'>{t('copy')}</div>
-          <div className='text-xl float-right'>
+    <div className='mb:min-h-16 visible fixed bottom-[30px] left-0 z-10 w-full bg-blue-dark opacity-100'>
+        <div className='flex flex-col-reverse items-center justify-between px-[60px] py-3 text-white-dark sm:flex-row md:pb-7'>
+          <div className='hidden text-center text-xs sm:block lg:text-sm'>{t('copy')}</div>
+          <div className='float-right text-xl'>
             <Link
               className='inline-block'
               href='https://www.linkedin.com/in/rogelio-vargas-marquez/'
